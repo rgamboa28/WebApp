@@ -1,0 +1,104 @@
+﻿@model ForDemoPurposeOnly.Models.WatchDetails
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>WatchDetails</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="WatchId" />
+            <div class="form-group">
+                <label asp-for="WatchName" class="control-label"></label>
+                <input asp-for="WatchName" class="form-control" />
+                <span asp-validation-for="WatchName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SerialNo" class="control-label"></label>
+                <input asp-for="SerialNo" class="form-control" />
+                <span asp-validation-for="SerialNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WatchWeight" class="control-label"></label>
+                <input asp-for="WatchWeight" class="form-control" />
+                <span asp-validation-for="WatchWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WatchHeight" class="control-label"></label>
+                <input asp-for="WatchHeight" class="form-control" />
+                <span asp-validation-for="WatchHeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WatchDiameter" class="control-label"></label>
+                <input asp-for="WatchDiameter" class="form-control" />
+                <span asp-validation-for="WatchDiameter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WatchThickness" class="control-label"></label>
+                <input asp-for="WatchThickness" class="form-control" />
+                <span asp-validation-for="WatchThickness" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShortDesc" class="control-label"></label>
+                <input asp-for="ShortDesc" class="form-control" />
+                <span asp-validation-for="ShortDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Caliber" class="control-label"></label>
+                <input asp-for="Caliber" class="form-control" />
+                <span asp-validation-for="Caliber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Movement" class="control-label"></label>
+                <input asp-for="Movement" class="form-control" />
+                <span asp-validation-for="Movement" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Chronograph" class="control-label"></label>
+                <input asp-for="Chronograph" class="form-control" />
+                <span asp-validation-for="Chronograph" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Jewel" class="control-label"></label>
+                <input asp-for="Jewel" class="form-control" />
+                <span asp-validation-for="Jewel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CaseMaterial" class="control-label"></label>
+                <input asp-for="CaseMaterial" class="form-control" />
+                <span asp-validation-for="CaseMaterial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrapMaterial" class="control-label"></label>
+                <input asp-for="StrapMaterial" class="form-control" />
+                <span asp-validation-for="StrapMaterial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FullDesc" class="control-label"></label>
+                <input asp-for="FullDesc" class="form-control" />
+                <span asp-validation-for="FullDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
