@@ -1,0 +1,119 @@
+﻿@model IEnumerable<ForDemoPurposeOnly.Models.WatchDetails>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WatchName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerialNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WatchWeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WatchHeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WatchDiameter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WatchThickness)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Caliber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Chronograph)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jewel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaseMaterial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrapMaterial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullDesc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WatchName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerialNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WatchWeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WatchHeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WatchDiameter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WatchThickness)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Caliber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chronograph)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jewel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaseMaterial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrapMaterial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullDesc)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.WatchId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.WatchId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.WatchId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

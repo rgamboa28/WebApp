@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M+ft6+AxY1XAf4+3Zt3NdxrJdtXjlFABgiUcwjv/JW8Jzu6swdpVslvMI8xGCLdOhb17iCZx88pKCAH27zRrxQ==",
+  "dgSpecHash": "0ieELs/GTzud0XBQvXF7y5rl/9vP+A3vetc6sZWwiqhskm3Umu0Ws9mpYdR9WlsVrlJJzwZbhrF6fKOcs+tyXA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\romar.gamboa\\source\\repos\\ForDemoPurposeOnly\\ForDemoPurposeOnly\\ForDemoPurposeOnly.csproj",
+  "projectFilePath": "C:\\Users\\romar.gamboa\\source\\repos\\Watch Catalog Website\\ForDemoPurposeOnly\\ForDemoPurposeOnly.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\romar.gamboa\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\romar.gamboa\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

@@ -1,0 +1,204 @@
+﻿@model ForDemoPurposeOnly.Models.WatchDetails
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+ <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>8 Oclock® | Affordable Watch</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/img/favicon.ico" rel="icon">
+    <link href="~/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> -->
+
+    <!-- Vendor CSS Files -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="~/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS Files -->
+    <link href="~/css/variables.css" rel="stylesheet">
+    <link href="~/css/main.css" rel="stylesheet">
+
+  </head>
+
+  s
+    <main id="main">
+
+                  <!-- ======= Log in Form ======= -->
+<form action="action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
+      <!-- ======= Hero Slider Section ======= -->
+      <section id="hero-slider" class="hero-slider">
+        <div class="container-md" data-aos="fade-in">
+          <div class="row">
+            <div class="col-12">
+              <div class="swiper sliderFeaturedPosts">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+
+                 <a href="/Pages/Product" class="img-bg d-flex align-items-end" style="background-image: url('img/Pic6.jpg');">
+                      <div class="img-bg-inner">
+                          <h2>Smart on the inside, Fashionable on the outside</h2>
+                        <p></p>
+                      </div>    
+                    </a>
+                  </div>
+
+
+              @*<! -- Picture #2 -->*@
+
+              <div class="swiper-slide">
+                    <a href="/Pages/Product" class="img-bg d-flex align-items-end" style="background-image: url('img/Pic4.jpg');">
+                      <div class="img-bg-inner">
+                      </div>
+                    </a>
+                  </div>         
+                  
+                  @*<! -- Picture #3 -->*@
+
+                <div class="swiper-slide">
+                    <a href="/Pages/Product" class="img-bg d-flex align-items-end" style="background-image: url('img/Pic7.jpg');">
+                      <div class="img-bg-inner">
+                        <h2></h2>
+                        <p></p>
+                      </div>
+                    </a>
+                  </div>
+
+                 @*<! -- Picture #4 -->*@
+                 <div class="swiper-slide">
+                    <a href="/Pages/Product" class="img-bg d-flex align-items-end" style="background-image: url('img/Pic5.jpg');">
+
+                      <div class="img-bg-inner">
+                        <h2></h2>
+                        <p></p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="custom-swiper-button-next">
+                  <span class="bi-chevron-right"></span>
+                </div>
+                <div class="custom-swiper-button-prev">
+                  <span class="bi-chevron-left"></span>
+                </div>
+
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- End Slider Section -->
+
+      <!-- ======= Post Grid Section ======= -->
+      <section id="posts" class="posts">
+        <div class="container" data-aos="fade-up">
+          <div class="row g-5">
+            <div class="col-lg-4">
+              <div class="post-entry-1 lg">
+                <a href="/Pages/Product"><img src="~/img/Pic5.jpg" alt="" class="img-fluid"></a>
+                <div class="post-meta"><span class="date">Watch 1</span> <span class="mx-1">&bullet;</span> <span><!--Jul 5th '22--></span></div>
+                <h2><a href="/Pages/Product">Smartwatches must be smarter than you!</a></h2>
+                <p class="mb-4 d-block">Nixon is the go-to accessories shop for premium watches and much more. With a wide range of quality watches, apparel, backpacks, and accessories, Nixon stays true to its surf, skate and snow roots. From everyday sports & fitness watches for an active lifestyle to small digital watches for a night out, there's something for everyone. Whether you need an everyday watch or are looking for your next skateboard watch, Nixon has you covered. Still can't find the perfect option, Customize Your Watch for a truly unique look.</p>
+
+                <div class="d-flex align-items-center author">
+                  <div class="name">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-lg-8">
+              <div class="row g-5">
+                <div class="col-lg-4 border-start custom-border">
+                  <div class="post-entry-1">
+                    <a href="/Pages/Product"><img src="~/img/Pics2.jpg" alt="" class="img-fluid"></a>
+                    <div class="post-meta"><span class="date"></span> Watch A001<span class="mx-1">&bullet;</span> <span><!--Jul 5th '22--></span></div>
+                    <h2><a href="/Pages/Product">Watch Me Nae Nae</a></h2>
+                  </div>
+                  <div class="post-entry-1">
+                    <a href="/Pages/Product"><img src="~/img/post-Pics1.jpg" alt="" class="img-fluid"></a>
+                    <div class="post-meta"><span class="date"></span> Watch A002 <span class="mx-1">&bullet;</span> <span><!--Jul 17th '22--></span></div>
+                    <h2><a href="/Pages/Product">Mango Watch</a></h2>
+                  </div>
+                  <div class="post-entry-1">
+                    <a href="/Pages/Productl"><img src="~/img/Pic3.jpg" alt="" class="img-fluid"></a>
+                  </div>
+                </div>
+                <div class="col-lg-4 border-start custom-border">
+                  <div class="post-entry-1">
+                    <a href="/Pages/Product"><img src="~/img/Pic13.jpg" alt="" class="img-fluid"></a>
+                    <div class="post-meta"><span class="date">Watch 003</span> <span class="mx-1">&bullet;</span> <span><!--Jul 5th '22--></span></div>
+                    <h2><a href="/Pages/Product"> </a></h2>
+                  </div>
+                  <div class="post-entry-1">
+                    <a href="/Pages/Product"><img src="~/img/Pic12.jpg" alt="" class="img-fluid"></a>
+                    <div class="post-meta"><span class="date"></span> 
+                      <span><!--Mar 1st '22--></span></div>
+                    <h2><a href="/Pages/Product">Watchivility</a></h2>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section> 
+
+    </main><!-- End #main -->
+
+
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/vendor/aos/aos.js"></script>
+    <script src="~/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/js/main.js"></script>
+
+  </html>

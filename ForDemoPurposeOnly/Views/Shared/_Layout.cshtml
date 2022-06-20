@@ -1,45 +1,139 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ForDemoPurposeOnly</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ForDemoPurposeOnly</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>8 Oclock® | Affordable Watch</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/img/favicon.ico" rel="icon">
+    <link href="~/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="~/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS Files -->
+    <link href="~/css/variables.css" rel="stylesheet">
+    <link href="~/css/main.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+  <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+               <a href="/Pages/Home" class="logo d-flex align-items-center">
+                <h1>8 OCLOCK</h1>
+            </a>
+                
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li> <a asp-area="" asp-controller="Pages" asp-action="Home">Home</a></li>             
+                    <li> <a asp-area="" asp-controller="Pages" asp-action="Product">Product</a></li>
+                    <li> <a asp-area="" asp-controller="Pages" asp-action="Contact">Contact</a></li>
+                    <li> <a asp-area="" asp-controller="WatchDetails" asp-action="Index">CRUD</a></li>
+                </ul>
+
+                <ul>
+                    <li><a href="search-result.html">Search Result</a></li>
+                <ul>
+         
+            </nav><!-- .navbar -->
+
+              <div class="position-relative">
+        <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
+        <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
+        <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
+
+        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+                <!-- ======= Search Form ======= -->
+                    <div class="search-form-wrap js-search-form-wrap">
+                        <form action="search-result.html" class="search-form">
+                            <span class="icon bi-search"></span>
+                            <input type="text" placeholder="Search" class="form-control">
+                            <button class="btn js-search-close"><span class="bi-x"></span></button>
+                        </form>
+                    </div><!-- End Search Form -->
+
             </div>
-        </nav>
-    </header>
+    </header><!-- End Header -->
+
+    
+
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/vendor/aos/aos.js"></script>
+    <script src="~/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/js/main.js"></script>
+
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+
+      <div class="footer-content">
+        <div class="container">
+        
+
+      <div class="footer-legal">
+        <div class="container">
+
+          <div class="row justify-content-between">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              <div class="copyright">
+                © Copyright <strong><span>8 Oclock</span></strong>. All Rights Reserved
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+      </div>
+      </div>
+
+    </footer>
+
+    
+    <!-- ======= END Footer ======= -->
+@*
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - ForDemoPurposeOnly - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - MVCsampleonly2._0 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer>*@
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

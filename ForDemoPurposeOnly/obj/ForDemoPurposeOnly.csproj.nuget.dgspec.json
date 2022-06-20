@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\romar.gamboa\\source\\repos\\ForDemoPurposeOnly\\ForDemoPurposeOnly\\ForDemoPurposeOnly.csproj": {}
+    "C:\\Users\\romar.gamboa\\source\\repos\\Watch Catalog Website\\ForDemoPurposeOnly\\ForDemoPurposeOnly.csproj": {}
   },
   "projects": {
-    "C:\\Users\\romar.gamboa\\source\\repos\\ForDemoPurposeOnly\\ForDemoPurposeOnly\\ForDemoPurposeOnly.csproj": {
+    "C:\\Users\\romar.gamboa\\source\\repos\\Watch Catalog Website\\ForDemoPurposeOnly\\ForDemoPurposeOnly.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\romar.gamboa\\source\\repos\\ForDemoPurposeOnly\\ForDemoPurposeOnly\\ForDemoPurposeOnly.csproj",
+        "projectUniqueName": "C:\\Users\\romar.gamboa\\source\\repos\\Watch Catalog Website\\ForDemoPurposeOnly\\ForDemoPurposeOnly.csproj",
         "projectName": "ForDemoPurposeOnly",
-        "projectPath": "C:\\Users\\romar.gamboa\\source\\repos\\ForDemoPurposeOnly\\ForDemoPurposeOnly\\ForDemoPurposeOnly.csproj",
+        "projectPath": "C:\\Users\\romar.gamboa\\source\\repos\\Watch Catalog Website\\ForDemoPurposeOnly\\ForDemoPurposeOnly.csproj",
         "packagesPath": "C:\\Users\\romar.gamboa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\romar.gamboa\\source\\repos\\ForDemoPurposeOnly\\ForDemoPurposeOnly\\obj\\",
+        "outputPath": "C:\\Users\\romar.gamboa\\source\\repos\\Watch Catalog Website\\ForDemoPurposeOnly\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\romar.gamboa\\AppData\\Roaming\\NuGet\\NuGet.Config",
