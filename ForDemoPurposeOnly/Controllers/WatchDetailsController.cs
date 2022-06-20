@@ -6,22 +6,32 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ForDemoPurposeOnly.Models;
+using Microsoft.Extensions.Configuration;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace ForDemoPurposeOnly.Controllers
 {
     public class WatchDetailsController : Controller
     {
-        private readonly WatchDetailContext _context;
-
-        public WatchDetailsController(WatchDetailContext context)
+        private string baseApiUrl;
+        public WatchDetailsController(IConfiguration configuration)
         {
-            _context = context;
+            baseApiUrl = configuration.GetValue<string>("ApiUrl");
         }
 
         // GET: WatchDetails
         public async Task<IActionResult> Index()
         {
-            return View(await _context.WatchDetails.ToListAsync());
+            string response = string.Empty;
+            using (var client = new HttpClient())
+            {
+
+                client.BaseAddress = new Uri(baseApiUrl);
+                response = client.GetStringAsync("api/WatchDetails/").Result;
+                var parameter = JsonConvert.DeserializeObject<List<WatchDetails>>(response);
+                return View(parameter);
+            }
         }
 
         // GET: WatchDetails/Details/5
@@ -32,14 +42,21 @@ namespace ForDemoPurposeOnly.Controllers
                 return NotFound();
             }
 
-            var watchDetails = await _context.WatchDetails
-                .FirstOrDefaultAsync(m => m.WatchId == id);
-            if (watchDetails == null)
+            WatchDetails watch = null;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(baseApiUrl);
+
+                var response = client.GetStringAsync("api/WatchDetails/" + id.ToString()).Result;
+                watch = JsonConvert.DeserializeObject<WatchDetails>(response);
+
+            }
+            if (watch == null)
             {
                 return NotFound();
             }
 
-            return View(watchDetails);
+            return View(watch);
         }
 
         // GET: WatchDetails/Create
@@ -57,9 +74,17 @@ namespace ForDemoPurposeOnly.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(watchDetails);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(baseApiUrl);
+                    var response = client.PostAsJsonAsync("api/WatchDetails/", watchDetails).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction(nameof(Index));
+                    }
+
+                }
+
             }
             return View(watchDetails);
         }
@@ -70,14 +95,24 @@ namespace ForDemoPurposeOnly.Controllers
             if (id == null)
             {
                 return NotFound();
+            }   
+
+            WatchDetails watch = null;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(baseApiUrl);
+
+                var response = client.GetStringAsync("api/WatchDetails/" + id.ToString()).Result;
+                watch = JsonConvert.DeserializeObject<WatchDetails>(response);
+
             }
 
-            var watchDetails = await _context.WatchDetails.FindAsync(id);
-            if (watchDetails == null)
+            if (watch == null)
             {
                 return NotFound();
             }
-            return View(watchDetails);
+
+            return View(watch);
         }
 
         // POST: WatchDetails/Edit/5
@@ -87,6 +122,7 @@ namespace ForDemoPurposeOnly.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("WatchId,WatchName,SerialNo,Price,WatchWeight,WatchHeight,WatchDiameter,WatchThickness,ShortDesc,Caliber,Movement,Chronograph,Jewel,CaseMaterial,StrapMaterial,FullDesc")] WatchDetails watchDetails)
         {
+
             if (id != watchDetails.WatchId)
             {
                 return NotFound();
@@ -96,21 +132,22 @@ namespace ForDemoPurposeOnly.Controllers
             {
                 try
                 {
-                    _context.Update(watchDetails);
-                    await _context.SaveChangesAsync();
+                    using (var client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri(baseApiUrl);
+                        var response = client.PutAsJsonAsync("api/WatchDetails/" + id.ToString(), watchDetails).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return RedirectToAction(nameof(Index));
+                        }
+
+                    }
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (Exception)
                 {
-                    if (!WatchDetailsExists(watchDetails.WatchId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+
                 }
-                return RedirectToAction(nameof(Index));
+
             }
             return View(watchDetails);
         }
@@ -123,14 +160,30 @@ namespace ForDemoPurposeOnly.Controllers
                 return NotFound();
             }
 
-            var watchDetails = await _context.WatchDetails
-                .FirstOrDefaultAsync(m => m.WatchId == id);
-            if (watchDetails == null)
+            WatchDetails watch = null;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(baseApiUrl);
+
+                var response = client.GetAsync("api/WatchDetails/" + id.ToString());
+                response.Wait();
+
+                var result = response.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    var read = result.Content.ReadAsAsync<WatchDetails>();
+                    read.Wait();
+
+                    watch = read.Result;
+                }
+            }
+            if (watch == null)
             {
                 return NotFound();
             }
 
-            return View(watchDetails);
+            return View(watch);
         }
 
         // POST: WatchDetails/Delete/5
@@ -138,15 +191,23 @@ namespace ForDemoPurposeOnly.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var watchDetails = await _context.WatchDetails.FindAsync(id);
-            _context.WatchDetails.Remove(watchDetails);
-            await _context.SaveChangesAsync();
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(baseApiUrl);
+
+                var delete = client.DeleteAsync("api/WatchDetails/" + id.ToString());
+                delete.Wait();
+
+                var result = delete.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+
+            }
+
             return RedirectToAction(nameof(Index));
         }
 
-        private bool WatchDetailsExists(int id)
-        {
-            return _context.WatchDetails.Any(e => e.WatchId == id);
-        }
     }
 }

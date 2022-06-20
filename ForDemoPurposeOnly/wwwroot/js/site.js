@@ -4,12 +4,12 @@
 // Write your JavaScript code.
 
 
-function check(form) {
-    if (form.userid.value == "admin" && form.pwd.value == "admin") {
-        return true;
-    }
-    else {
-        alert("Error Password or Username")
-        return false;
-    }
-}
+//function check(form) {
+//    if (form.userid.value == "admin" && form.pwd.value == "admin") {
+//        return true;
+//    }
+//    else {
+//        alert("Error Password or Username")
+//        return false;
+//    }
+//}

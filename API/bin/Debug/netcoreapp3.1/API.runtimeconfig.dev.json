@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\romar.gamboa\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\romar.gamboa\\.nuget\\packages"
+    ]
+  }
+}
