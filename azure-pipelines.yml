@@ -32,3 +32,10 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Visual Studio Enterprise Subscription (f2c87ecc-aa59-4cdb-bb03-bda6f5806233)'
+    appType: 'webApp'
+    WebAppName: 'WatchCatalogWebApp'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
